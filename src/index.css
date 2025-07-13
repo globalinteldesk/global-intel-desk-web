@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Global Intel Desk Design System - Modern Intelligence Platform */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Intelligence Theme */
+    --background: 222 47% 7%;  /* Deep navy background */
+    --foreground: 210 40% 98%;  /* Light text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 9%;  /* Slightly lighter than background for glass cards */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 195 100% 50%;  /* Cyan primary */
+    --primary-foreground: 222 47% 7%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 91% 60%;  /* Electric blue */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 47% 12%;  /* Muted glass background */
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 83% 58%;  /* Purple accent */
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 222 47% 15%;  /* Subtle borders */
+    --input: 222 47% 12%;
+    --ring: 195 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Glass Effects */
+    --glass-bg: 210 40% 98% / 0.05;  /* Ultra-subtle white overlay */
+    --glass-border: 210 40% 98% / 0.1;  /* Subtle border */
+    --glass-hover: 210 40% 98% / 0.08;  /* Enhanced on hover */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(217 91% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 58%), hsl(217 91% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 100% 70%), hsl(262 83% 68%));
+    --gradient-text: linear-gradient(135deg, hsl(195 100% 60%), hsl(262 83% 65%));
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsla(195 100% 50% / 0.1);
+    --shadow-glow: 0 0 40px hsla(195 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px hsla(222 47% 4% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glass: backdrop-filter 0.3s ease, background-color 0.3s ease;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +121,174 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Glass morphism utility classes */
+  .glass {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--glass-border));
+    transition: var(--transition-glass);
+  }
+
+  .glass-hover:hover {
+    background: hsla(var(--glass-hover));
+    backdrop-filter: blur(16px);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Gradient text utilities */
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  /* Floating particles background */
+  .particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsla(195 100% 50% / 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsla(262 83% 58% / 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsla(217 91% 60% / 0.3), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsla(195 100% 50% / 0.2), transparent),
+      radial-gradient(2px 2px at 160px 30px, hsla(262 83% 58% / 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Typing animation for hero text */
+  .typing {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--primary));
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2s steps(20, end), blink-caret 1s step-end infinite;
+  }
+}
+
+@layer components {
+  /* Enhanced button variants */
+  .btn-glass {
+    @apply glass glass-hover px-6 py-3 rounded-xl font-medium transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-glass:hover::before {
+    left: 0;
+    opacity: 0.1;
+  }
+
+  /* Card enhancements */
+  .intel-card {
+    @apply glass glass-hover p-6 rounded-2xl transition-all duration-500;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .intel-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Navigation glass effect */
+  .nav-glass {
+    @apply fixed top-0 left-0 right-0 z-50;
+    background: hsla(var(--background) / 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid hsla(var(--glass-border));
+  }
+}
+
+/* Keyframe animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: hsl(var(--primary)); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsla(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 40px hsla(var(--primary) / 0.6); }
 }
