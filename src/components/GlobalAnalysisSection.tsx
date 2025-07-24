@@ -44,7 +44,7 @@ export const GlobalAnalysisSection = () => {
   }, []);
 
   return (
-    <section id="analysis" className="py-24 relative" ref={sectionRef}>
+    <section id="analysis" className="py-20 relative" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">

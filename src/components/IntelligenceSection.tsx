@@ -18,14 +18,14 @@ const intelligenceCards = [
   {
     icon: Shield,
     title: 'Threat Intelligence',
-    description: 'Real-time threat detection and analysis from global security networks.',
+    description: 'Global event monitoring highlighting risks to business continuity, operations, and regional stability.',
     features: ['Advanced Analytics', 'Pattern Recognition', '24/7 Monitoring'],
     color: 'from-red-500 to-orange-500'
   },
   {
     icon: Globe,
     title: 'Geopolitical Analysis',
-    description: 'Comprehensive analysis of global political and economic developments.',
+    description: 'Tracking power shifts, conflict updates, and leadership narratives shaping global dynamics.',
     features: ['Regional Expertise', 'Trend Forecasting', 'Impact Assessment'],
     color: 'from-blue-500 to-cyan-500'
   },
@@ -46,14 +46,14 @@ const intelligenceCards = [
   {
     icon: Eye,
     title: 'OSINT Collection',
-    description: 'Open source intelligence gathering from publicly available information.',
+    description: 'Curated insights from public sources on advisories, protests, and real-time events.',
     features: ['Social Media Analysis', 'Web Monitoring', 'Content Verification'],
     color: 'from-indigo-500 to-blue-500'
   },
   {
     icon: Lock,
-    title: 'Secure Communications',
-    description: 'End-to-end encrypted intelligence sharing and collaboration platform.',
+    title: 'Live Global Feed',
+    description: 'Instant updates on conflicts, calamities, and major developments impacting mobility and operations.',
     features: ['Military-grade Encryption', 'Secure Channels', 'Access Control'],
     color: 'from-slate-500 to-gray-500'
   }
@@ -83,7 +83,7 @@ export const IntelligenceSection = () => {
   }, []);
 
   return (
-    <section id="intelligence" className="py-24 relative" ref={sectionRef}>
+    <section id="intelligence" className="pt-24 relative" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
@@ -158,11 +158,7 @@ export const IntelligenceSection = () => {
           ].map((stat, index) => (
             <div
               key={stat.label}
-              className={`intel-card text-center group transform transition-all duration-700 ${
-                visibleCards.includes(index + 6) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
+              className={`intel-card text-center group transform transition-all duration-700 opacity-100 translate-y-0`}
               style={{ transitionDelay: `${(index + 6) * 100}ms` }}
             >
               <stat.icon className="h-8 w-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
