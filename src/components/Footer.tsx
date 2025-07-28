@@ -55,9 +55,9 @@ export const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/1431c15f-5ffa-42d9-ad9d-547acd4fe54e.png" 
+                src="/logos/white-clear-logo.png" 
                 alt="Global Intel Desk" 
-                className="h-12 w-12"
+                className="h-10 w-11"
               />
               <span className="text-2xl font-bold gradient-text">
                 GlobalIntelDesk

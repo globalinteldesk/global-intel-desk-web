@@ -29,9 +29,9 @@ export const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/1431c15f-5ffa-42d9-ad9d-547acd4fe54e.png" 
+              src="/logos/white-clear-logo.png" 
               alt="Global Intel Desk" 
-              className="h-10 w-10"
+              className="h-8 w-9"
             />
             <span className="text-xl font-bold gradient-text">
               GlobalIntelDesk
