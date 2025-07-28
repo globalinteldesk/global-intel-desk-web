@@ -45,7 +45,7 @@ export default function NewsSection({ news, loading }: { news: NewsArticle[]; lo
   const navigate = useNavigate();
 
   return (
-    <section className="flex justify-center items-center mb-16 p-4 font-sans">
+    <section className="flex justify-center items-center mb-16 p-4">
       <div className="w-full max-w-6xl">
         <h2 className="text-5xl md:text-6xl font-bold text-center mb-8 gradient-text">
           Latest News

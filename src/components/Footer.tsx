@@ -57,7 +57,7 @@ export const Footer = () => {
               <img 
                 src="/logos/white-clear-logo.png" 
                 alt="Global Intel Desk" 
-                className="h-10 w-11"
+                className="h-6 w-7"
               />
               <span className="text-2xl font-bold gradient-text">
                 GlobalIntelDesk
