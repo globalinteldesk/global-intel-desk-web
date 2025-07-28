@@ -1,4 +1,4 @@
-import { Globe, Shield, Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
 
 export const Footer = () => {
   const footerSections = [
