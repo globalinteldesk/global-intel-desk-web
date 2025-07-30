@@ -41,9 +41,7 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/global-intel-desk-94447836b/', label: 'LinkedIn' }
   ];
 
   return (
@@ -70,18 +68,18 @@ export const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex items-center space-x-3 text-sm" aria-label="Contact Info" >
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">intel@globalinteldesk.com</span>
+                <a href="mailto:globalinteldesk@gmail.com" className="text-muted-foreground">globalinteldesk@gmail.com</a>
               </div>
-              <div className="flex items-center space-x-3 text-sm">
+              {/* <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
+              </div> */}
+              {/* <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">Global Operations Center</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Social Links */}
@@ -92,6 +90,7 @@ export const Footer = () => {
                   href={social.href}
                   className="p-2 rounded-lg glass-hover transition-all duration-300 group"
                   aria-label={social.label}
+                  target="_blank"
                 >
                   <social.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
