@@ -1,4 +1,5 @@
 import { Shield, Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
+import currentYear from '@/lib/date';
 
 export const Footer = () => {
   const footerSections = [
@@ -145,7 +146,7 @@ export const Footer = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} GlobalIntelDesk. All rights reserved.
+              © {currentYear} GlobalIntelDesk. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

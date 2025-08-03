@@ -39,15 +39,15 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-evenly">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg glass-hover transition-all duration-300 group"
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg glass-hover transition-all duration-300 group mx-1"
               >
                 <item.icon className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-foreground group-hover:text-primary transition-colors">
+                <span className="text-foreground group-hover:text-primary transition-colors text-sm font-semibold">
                   {item.label}
                 </span>
               </a>
