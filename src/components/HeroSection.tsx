@@ -43,7 +43,7 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Animated Title */}
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
               <span className="gradient-text block">
                 {currentTitle}
                 <span className="animate-pulse">|</span>
