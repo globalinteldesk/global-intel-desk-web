@@ -18,7 +18,7 @@ export const Navigation = () => {
     { label: 'Intelligence', href: '#intelligence', icon: Shield },
     { label: 'Global Analysis', href: '#analysis', icon: Globe },
     { label: 'Real-time Updates', href: '#updates', icon: Activity },
-    { label: 'Reports', href: '#reports', icon: FileText },
+    { label: 'Reports', href: '/reports', icon: FileText },
     { label: 'Alerts', href: '#alerts', icon: Bell },
   ];
 
@@ -27,16 +27,18 @@ export const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img 
-              src="/logos/white-clear-logo.png" 
-              alt="Global Intel Desk" 
-              className="h-6 w-7"
-            />
-            <span className="text-xl font-bold gradient-text">
-              GlobalIntelDesk
-            </span>
-          </div>
+          <a href="/">
+            <div className="flex items-center space-x-3">
+              <img
+                src="/logos/white-clear-logo.png"
+                alt="Global Intel Desk"
+                className="h-6 w-7"
+              />
+              <span className="text-xl font-bold gradient-text">
+                GlobalIntelDesk
+              </span>
+            </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-evenly">
@@ -55,11 +57,11 @@ export const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Button className="btn-glass gradient-primary text-primary-foreground">
               Access Dashboard
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -86,9 +88,9 @@ export const Navigation = () => {
                   <span>{item.label}</span>
                 </a>
               ))}
-              <Button className="w-full btn-glass gradient-primary text-primary-foreground mt-4">
+              {/* <Button className="w-full btn-glass gradient-primary text-primary-foreground mt-4">
                 Access Dashboard
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}
